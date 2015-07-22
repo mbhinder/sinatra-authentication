@@ -1,4 +1,5 @@
 #sinatra_authentication
+  <%= Rack::Csrf.csrf_tag(env) %>
   %h1.page_title Sign Up
   %form{:action => "/signup", :method => "post"}
     .field

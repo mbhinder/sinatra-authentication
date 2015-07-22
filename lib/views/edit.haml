@@ -1,4 +1,5 @@
 #sinatra_authentication
+  <%= Rack::Csrf.csrf_tag(env) %>
   %h1
     Edit
     - if @user.id == current_user.id

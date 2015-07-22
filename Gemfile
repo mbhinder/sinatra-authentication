@@ -6,6 +6,8 @@ group :test do
   gem 'rspec'
 end
 
+gem 'jeweler'
+
 ##############################################
 # Other Dependancies
 # - Uncomment as needed.

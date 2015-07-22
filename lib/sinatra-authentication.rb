@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'rack/csrf'
 require File.expand_path("../models/abstract_user", __FILE__)
 
 module Sinatra
@@ -10,6 +11,7 @@ module Sinatra
       #sinatra 9.1.1 doesn't have multiple view capability anywhere
       #so to get around I have to do it totally manually by
       #loading the view from this path into a string and rendering it
+      app.use Rack::Csrf, :raise => true
       app.set :sinatra_authentication_view_path, File.expand_path('../views/', __FILE__)
       unless defined?(settings.template_engine)
         app.set :template_engine, :haml
